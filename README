@@ -13,3 +13,6 @@ Debe haber archivos de cabecera para las funciones del servidor <headers.h>
 
 Debemos tener server.c y cliente.c y las librerias y libreria.h
 
+Directorios:
+
+funciones.c - Todas las funciones que realiza el servidor
