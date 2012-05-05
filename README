@@ -10,3 +10,5 @@ Un servidor recibe las peticiones(concurrente)
 	Cuando cliente "usa un archivo" otro cliente no puede "usarlo"
 
 Debe haber archivos de cabecera para las funciones del servidor <headers.h>
+
+Debemos tener server.c y cliente.c y las librerias y libreria.h
