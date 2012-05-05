@@ -37,11 +37,13 @@ int main()
 	
 	//Loop infinito pidiendo comandos
 	
+
+
+//imprimirlo para checarlo
+	//cada Enter lo manda al server
 	
-	//imprimirlo para checarlo
 	
 	
-	//enviarlo
 	
 }
 
