@@ -1,6 +1,6 @@
 /**
-@author: Abraham Gonzalez et all
-@Manejador de archivos en unix
+@author: Martin Granados & Abraham Gonzalez 
+@Servidor de archivos distribuido
 
 **/
 
