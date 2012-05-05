@@ -5,7 +5,7 @@
 #include <stdlib.h> 
 #include <string.h> 
  
-#define PORT 36557 /* El puerto que ser· abierto */ 
+#define PORT 36667 /* El puerto que ser· abierto */ 
 #define BACKLOG 2 /* El n˙mero de conexiones permitidas */ 
  
 main() 
@@ -62,7 +62,7 @@ char buf[100];
          exit(-1); 
       } 
  
-      printf("Se obtuvo una conexiÛn desde %s\n", 
+      printf("Se obtuvo una conexiÛn desde %d \n", 
              inet_ntoa(client.sin_addr) );  
       /* que mostrar· la IP del cliente */ 
  

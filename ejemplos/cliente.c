@@ -6,7 +6,7 @@
 #include <stdlib.h> 
 #include <string.h> 
  
-#define PORT 36557          
+#define PORT 36667          
 /* El Puerto Abierto del nodo remoto */ 
  
 #define MAXDATASIZE 100    
