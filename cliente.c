@@ -13,34 +13,19 @@
 /* 128 bytes a pasar máximo */
 
 
-char* ip = "127.0.0.1"
+
 /* MAIN */
 int main()
 {
 
 /* VARIABLES */
-int sesioniniciada = 0;
-int salida = 0;
-char comando[90];
+
+char cadena[100], *comando, *atributo, *atributo2, buffer[512]; 
 char * usuario;
 char * password;
+int pase=0;
+int caso;
 
-/* Datos de inicio de sesion */
-//datos de sesión
-char *users[5];
-char *passwords[5];
-
-users[0]="Martin";
-users[1]="Abraham";
-users[2]="Martin";
-users[3]="Admin";
-users[4]="kevin";
-
-passwords[0]="1";
-passwords[1]="lol";
-passwords[2]="martin";
-passwords[3]="admin";
-passwords[4]="k";
 
 	int fd, numbytes;
 	/* descriptores de ficheros */
@@ -98,7 +83,6 @@ if((strcmp(users[i],usuario)==0) && (strcmp(passwords[i],pass)==0))
 	param1= strtok(NULL," ");
 
 	
-<<<<<<< HEAD
 	//Loop infinito pidiendo comandos
 	
 
@@ -107,10 +91,8 @@ if((strcmp(users[i],usuario)==0) && (strcmp(passwords[i],pass)==0))
 	//cada Enter lo manda al server
 	
 	
-=======
 	//enviar mensaje constantemente
->>>>>>> 28664df62713def64e02723b007c09160b344322
-	
+
 	
 }
 

@@ -1,0 +1,14 @@
+Cliente
+	Pide login
+	Pide los comandos
+
+	Una vez que recibe un comando los manda al server
+	Esta ciclado hasta que se oprima CTRL+C
+		Confirma salir
+
+Servidor
+	Recibe mensajes 
+	Compara con los casos 
+		Cada nuevo caso crea un nuevo thread
+	Hasta oprimir CTRL + C se saldría
+		confirma salida

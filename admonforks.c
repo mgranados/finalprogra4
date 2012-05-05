@@ -75,6 +75,18 @@ int main()
 		atributo=strtok(NULL, " ");
 		atributo2=strtok(NULL, " ");	
 
+
+
+/** <--------------- HASTA AQUÍ VA EL CLIENTE
+
+
+
+*/
+
+
+
+
+/** <---------------------ENVIA los comandos y atributos */
 		/*Asignación del caso que se debe seguir según el comando introducido*/
 		if(strcmp(comando,"pwd")==0)
 			caso=1;
