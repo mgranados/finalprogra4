@@ -15,8 +15,8 @@
 	Funciones Prototipo 
 ------------------------------*/
 
-//Funcion que muestra los directorios
-	void mostrardir();
+//Funcion que muestra el contenido de los directorios
+	void mostrarCdir();
 //Funcion para crear, editar archivos
 	void editar ();
 //Funcion que muestra el contenido de un archivo
@@ -25,13 +25,14 @@
 	void copiar();
 //Funcion que mueve un archivo de lugar
 	void mover ();
-	
+//Funcion que imprime el directorio actual
+	void mostrardir ();	
 	
 /* ---------------------
 		Funciones
 ------------------------*/
 
-void mostrardir()
+void mostrarCdir()
 {
 	DIR *dir;
 	struct dirent *mi_dir;
@@ -58,6 +59,7 @@ void editar(char *arg)
 	archivo=fopen(arg, "w");	printf("Contenido $\n");
 	scanf(" %[^\n]s", cadena);
 	fprintf(archivo, "%s", cadena);
+	
 	fclose(archivo);
 }
 
@@ -132,4 +134,9 @@ void mover(char *arg1, char *arg2)
 		printf("Se ha movido el archivo\n");	
 	}
 	fclose(archivo1);
+}
+
+void mostrardir()
+{
+	printf("%s \n",getcwd(buffer,-1));
 }
