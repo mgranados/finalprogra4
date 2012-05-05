@@ -37,9 +37,14 @@ void mostrardir()
 	struct dirent *mi_dir;
 	char buff[512];
 
-	dir=opendir(getcwd(buff,-1));
+	if((dir=opendir(getcwd(buff,-1)))==-1){
+		perror("Error en mostrardir, al abrir un directorio");
+		exit(1);
+		}
+		
 	while((mi_dir=readdir(dir))!=NULL)
 		printf("%s \n", mi_dir->d_name);
+	
 	closedir(dir);
 }
 
