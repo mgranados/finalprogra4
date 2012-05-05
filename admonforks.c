@@ -1,5 +1,5 @@
 /**
-@author: Martin Granados & Abraham Gonzalez 
+@author: Abraham Gonzalez  & Martin Granados
 @Servidor de archivos distribuido
 
 i want to kill everybody
