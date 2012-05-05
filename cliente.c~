@@ -97,8 +97,7 @@ if((strcmp(users[i],usuario)==0) && (strcmp(passwords[i],pass)==0))
 	param = strtok(NULL," ");
 	param1= strtok(NULL," ");
 
-	
-	//enviar mensaje constantemente
+
 	
 	
 }
