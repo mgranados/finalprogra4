@@ -1,3 +1,12 @@
+/**
+@author: Abraham Gonzalez et all
+@Manejador de archivos en unix
+
+**/
+
+
+
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
