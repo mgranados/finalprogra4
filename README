@@ -1,0 +1,12 @@
+En parejas
+
+
+Servidor archivos distribuido
+
+Administrador de archivos
+Un servidor recibe las peticiones(concurrente)
+	Proceso hijo (hilo o proceso)
+	Atender a varios clientes
+	Cuando cliente "usa un archivo" otro cliente no puede "usarlo"
+
+Debe haber archivos de cabecera para las funciones del servidor <headers.h>
