@@ -12,6 +12,11 @@
 
 
 /* ---------------------------
+	Variables Globales 
+------------------------------*/
+char buffer[512];
+
+/* ---------------------------
 	Funciones Prototipo 
 ------------------------------*/
 
@@ -38,11 +43,8 @@ void mostrarCdir()
 	struct dirent *mi_dir;
 	char buff[512];
 
-	if((dir=opendir(getcwd(buff,-1)))==-1){
-		perror("Error en mostrardir, al abrir un directorio");
-		exit(1);
-		}
-		
+	dir=opendir(getcwd(buff,-1));
+			
 	while((mi_dir=readdir(dir))!=NULL)
 		printf("%s \n", mi_dir->d_name);
 	
@@ -54,12 +56,15 @@ void mostrarCdir()
 void editar(char *arg)
 {
 	FILE *archivo;
-	char cadena[500];
-	
+	 char c;	
 	archivo=fopen(arg, "w");	printf("Contenido $\n");
-	scanf(" %[^\n]s", cadena);
-	fprintf(archivo, "%s", cadena);
 	
+do	{
+	scanf("%c",&c);
+	fputc(c,archivo);		}
+
+	while(c!='@');
+
 	fclose(archivo);
 }
 
@@ -77,7 +82,13 @@ void mostrar(char *arg)
 		while(feof(archivo)==0)
 		{
 			caracter=fgetc(archivo);
+			if(caracter=='@')
+			break;
+			else
 			printf("%c",caracter);
+		
+			
+			
 		}
 		printf("\n\n");
 	}
