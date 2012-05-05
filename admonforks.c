@@ -2,6 +2,8 @@
 @author: Abraham Gonzalez et all
 @Manejador de archivos en unix
 
+i want to kill everybody
+
 **/
 
 
