@@ -33,6 +33,13 @@ char buffer[512];
 //Funcion que imprime el directorio actual
 	void mostrardir ();	
 	
+	
+	
+
+
+	
+	
+	
 /* ---------------------
 		Funciones
 ------------------------*/
