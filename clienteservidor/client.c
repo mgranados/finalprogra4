@@ -81,7 +81,7 @@ if((strcmp(users[i],usuario)==0) && (strcmp(passwords[i],password)==0))
         {
         //SESION INICIADA
         sesioniniciada=1;
-        printf("	EHHHHHHHHHHHHHHHHHH\n");
+        printf("Login exitoso.\n");
         break;
         }
         else 
