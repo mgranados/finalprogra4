@@ -31,4 +31,9 @@
 		printf("mostrardir");
 		mostrardir();
 		
+		
+		
+		
+		
+		
 	}
