@@ -42,15 +42,6 @@ int salida =0 ;
 int fd, numbytes;
 	/* descriptores de ficheros */
 	
-	
-//char buf[MAXDATASIZE];
-	/*buffer del texto */
-//struct hostent *ho;
-	/*Estructura que recibe informacion del nodo remoto */
-//struct sockaddr_in server;
-	/* info sobre dirección del servidor */
-	
-	
 	/*--------------------------------- PEDIR  LOGIN ------------------------------------------------ */
 
 while(sesioniniciada==0){
