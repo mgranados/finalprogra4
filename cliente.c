@@ -38,7 +38,7 @@ char cadena[100], *comando, *atributo, *atributo2, buffer[512];
 char usuario[100];
 char password[100];
 int sesioniniciada=0;
-int caso;
+int salida =0 ;
 int fd, numbytes;
 	/* descriptores de ficheros */
 	
@@ -75,17 +75,17 @@ if((strcmp(users[i],usuario)==0) && (strcmp(passwords[i],password)==0))
 		//SESION INICIADA
 		sesioniniciada=1;
 		printf("	EHHHHHHHHHHHHHHHHHH\n");
+		break;
 		}
-		
 		else 
 		printf("Login incorrecto, intentelo nuevamente\n");
 	}
 }
-}
-/** PEDIR LAS ORDENES **/
- /*
- while(salida == 1){
-	printf("%s>>", usuario);
+
+/** -------------------------- while  PEDIR LAS ORDENES ---------------------**/
+ 
+ while(salida == 0){
+printf("%s@server:~$",usuario);
 	scanf(" %[^\n]s", comando);
 	// SALIDA
 	
@@ -107,9 +107,9 @@ if((strcmp(users[i],usuario)==0) && (strcmp(passwords[i],password)==0))
 	//enviar mensaje constantemente
 
 	
-}*/
+}
 
 
 /*--------------------------------------- CERRAR  MAIN ------------------------------------------------ */
-
+}
 
