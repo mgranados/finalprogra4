@@ -75,61 +75,40 @@ int main (int argc, char *argv[])
 		
 	if(strcmp(cmd,"pwd")==0)
 	{
-	caso=1;
 	cic++;
-	printf("\n --%d-- \n",caso);
 	cadena = mostrardir(buffer);
 	n = write(newsockfd,cadena,100);
 	}
 	else if(strcmp(cmd,"ls")==0)
 	{
-	caso=2;
-	printf("\n --%d-- \n",caso);
+	
 	}
 	else if(strcmp(cmd,"cd")==0)
 	{
-	caso=3;
-	printf("\n --%d-- \n",caso);
 	}
 	else if(strcmp(cmd,"mkdir")==0)
 	{
-	caso=4;
-	printf("\n --%d-- \n",caso);
 	}
 	else if(strcmp(cmd,"rmdir")==0)
 	{
-	caso=5;
-	printf("\n --%d-- \n",caso);
 	}
 	else if(strcmp(cmd,"vi")==0)
 	{
-	caso=6;
-	printf("\n --%d-- \n",caso);
 	}
 	else if(strcmp(cmd,"cat")==0)
 	{
-	caso=7;
-	printf("\n --%d-- \n",caso);
 	}
 	else if(strcmp(cmd,"cp")==0)
 	{
-	caso=8;
-	printf("\n --%d-- \n",caso);
 	}
 	else if(strcmp(cmd,"mv")==0)
 	{
-	caso=9;
-	printf("\n --%d-- \n",caso);
 	}
 	else if(strcmp(cmd,"rm")==0)
 	{
-	caso=10;
-	printf("\n --%d-- \n",caso);
 	}
 	else if(strcmp(cmd,"exit")==0)
 	{
-	caso=11;
-	printf("\n --%d-- \n",caso);
 	}
 	else
 	printf("\n No es un comando valido\n");
