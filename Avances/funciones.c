@@ -17,11 +17,13 @@
 ------------------------------*/
 
 //Funcion que muestra el contenido de los directorios
-	void *mostrarCdir();
-//Funcion para crear, editar archivos
-	void *editar ();
+	char *mostrarCdir();
+//Funcion para editar archivos
+	void *editar (char *arg, char *arg2);
+//Funcion para crear archivos
+	void *crear (char *arg);
 //Funcion que muestra el contenido de un archivo
-	void *mostrar();
+	char *mostrar(char *arg);
 //Funcion que copia un archivo
 	void *copiar();
 //Funcion que mueve un archivo de lugar
@@ -33,62 +35,69 @@
 		Funciones
 ------------------------*/
 
-void *mostrarCdir()
+char *mostrarCdir()
 {
 	DIR *dir;
 	struct dirent *mi_dir;
 	char buff[512];
+	char *buffer;
+	char *cadenaD;
+	char *espacio="\n";
 
 	dir=opendir(getcwd(buff,-1));
 			
 	while((mi_dir=readdir(dir))!=NULL)
-		printf("%s \n", mi_dir->d_name);
-	
+		{
+	buffer= mi_dir->d_name;
+	strcat(buffer,espacio);
+	strcat(cadenaD,buffer);
+		}
 	closedir(dir);
+	
+	return cadenaD;
 }
 
-
-
-void *editar(char *arg)
+void *crear(char *arg)
 {
 	FILE *archivo;
 	 char c;	
-	archivo=fopen(arg, "w");	printf("Contenido $\n");
-	
-do	{
-	scanf("%c",&c);
-	fputc(c,archivo);		}
+	archivo=fopen(arg, "w");
 
-	while(c!='@');
+	fclose(archivo);	
+}
+
+void *editar(char *arg, char *arg2)
+{
+	FILE *archivo;
+	 char c;	
+	archivo=fopen(arg, "w");
+	
+	fputs(arg2,archivo);
 
 	fclose(archivo);
 }
 
-void *mostrar(char *arg)
+char *mostrar(char *arg)
 {
 	FILE *archivo;
-	char caracter;
+	char caracter[100];
+	char *buffer;
 
 	archivo=fopen(arg, "r");
-	if(archivo==NULL)
-		printf("El archivo no existe \n");
-	else
+	if(archivo==NULL){
+	return NULL;}
+	
+		else
 	{
-		printf("\n");
-		while(feof(archivo)==0)
-		{
-			caracter=fgetc(archivo);
-			if(caracter=='@')
-			break;
-			else
-			printf("%c",caracter);
+		fgets(caracter,100,archivo);
+		strncpy(buffer,caracter,strlen(caracter));
+		printf("%s",buffer);
 		
-			
-			
-		}
-		printf("\n\n");
 	}
-	fclose(archivo);	
+
+	fclose(archivo);
+	return buffer;
+	
 }
 
 
@@ -100,17 +109,16 @@ void *copiar(char *arg1, char *arg2)
 	archivo1=fopen(arg1, "r");
 	archivo2=fopen(arg2, "w");	//Crea el archivo en caso de que no exista
 
-	if(archivo1==NULL)
-		printf("El archivo %s no exite", arg1);
-	else
-	{
+
+	
+
 		while(feof(archivo1)==0)
 		{
 			caracter=getc(archivo1);
 			putc(caracter,archivo2);
 		}
-		printf("Se ha copiado el archivo\n");
-	}	
+		
+	
 	fclose(archivo1);
 	fclose(archivo2);	
 }
@@ -126,10 +134,7 @@ void *mover(char *arg1, char *arg2)
 	chdir(arg2);
 	archivo2=fopen(arg1, "w");
 
-	if(archivo1==NULL)
-		printf("El archivo %s no exite", arg1);
-	else
-	{
+	
 		while(feof(archivo1)==0)
 		{
 			caracter=fgetc(archivo1);
@@ -138,8 +143,7 @@ void *mover(char *arg1, char *arg2)
 		fclose(archivo2);
 		chdir("../");
 		remove(arg1);
-		printf("Se ha movido el archivo\n");	
-	}
+			
 	fclose(archivo1);
 }
 

@@ -59,6 +59,13 @@ int main(int argc, char *argv[])
          error("ERROR reading from socket");
     printf("%s\n",buffer);
     
+    if((strcmp(buffer,"Escriba su contenido: \n"))==0)
+    {
+        bzero(buffer,256);
+        fgets(buffer,255,stdin);
+        n = write(sockfd,buffer,strlen(buffer));
+    }
+    
     close(sockfd);
 }
     return 0;

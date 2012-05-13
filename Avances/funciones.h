@@ -1,11 +1,13 @@
 
 
 //Funcion que muestra el contenido de los directorios
-extern	void *mostrarCdir();
-//Funcion para crear, editar archivos
-extern	void *editar (char*);
+extern	char *mostrarCdir();
+//Funcion para editar archivos
+extern	void *editar (char*,char*);
+//Funcion para crear archivos
+extern	void *crear (char*);
 //Funcion que muestra el contenido de un archivo
-extern	void *mostrar(char*);
+extern	char *mostrar(char*);
 //Funcion que copia un archivo
 extern	void *copiar(char*,char*);
 //Funcion que mueve un archivo de lugar
