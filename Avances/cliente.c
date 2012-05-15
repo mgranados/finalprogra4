@@ -56,6 +56,7 @@ int main(int argc, char *argv[])
       fprintf(stderr,"usage %s hostname port\n", argv[0]);
       exit(0);
    }
+   system("clear");
    printf("\n Bienvenido al servidor \n")
    
    while(contador==0)
