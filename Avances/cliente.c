@@ -20,7 +20,6 @@ scanf("%[^\n]s",n);
 if(strcmp(n,"yes")==0 || strcmp(n , "YES")==0 || strcmp(n,"y")==0){
 exit(0); 
 }else {
-
 signal (SIGINT, SIG_DFL);
 }
 
@@ -44,19 +43,39 @@ int main(int argc, char *argv[])
     int conec= argc;
     char *arg1= argv[1];
     char *arg2= argv[2];
+    char *us, *pas;
     
     
     char buffer[256];
-    char usuario[256];
-    char pass[256];
-    char pase[256];
-    char user[256]="œ";
+    char usuario[100];
+    char password[100];
   
     int contador=0;
    
    if (conec < 3) {
       fprintf(stderr,"usage %s hostname port\n", argv[0]);
       exit(0);
+   }
+   
+   
+   while(contador==0)
+   {
+       printf("\n Usuario: ");
+  fgets(usuario,255,stdin);
+  us=strtok(usuario, "\n");
+      printf("\n Contraseña: ");
+    fgets(password,255,stdin);
+    pas=strtok(password, "\n");
+
+     if(strcmp(us,"abraham")==0 && strcmp(pas,"1")==0)
+     contador++;
+     else if(strcmp(us,"martin")==0 && strcmp(pas,"2")==0)
+     contador++;
+     else if(strcmp(us,"sandy")==0 && strcmp(pas,"3")==0)
+     contador++;
+     else
+     printf("\n Usuario o contraseña Incorrecta Por favor intente de nuevo");
+
    }
    
 
@@ -84,7 +103,7 @@ int main(int argc, char *argv[])
         serv_addr.sin_port = htons(portno);
         if (connect(sockfd,(struct sockaddr *) &serv_addr,sizeof(serv_addr)) < 0) 
         error("ERROR connecting");
-    printf("%s@server: ", user);
+    printf("%s@server: ", usuario);
   bzero(buffer,256);
 
   fgets(buffer,255,stdin);
