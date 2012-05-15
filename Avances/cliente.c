@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
       exit(0);
    }
    system("clear");
-   printf("\n Bienvenido al servidor \n")
+   printf("\n Bienvenido al servidor \n");
    
    while(contador==0)
    {
