@@ -17,7 +17,7 @@ printf("\n Está seguro que desea terminarlo? ");
 scanf("%[^\n]s",n); 
 // printf("Presiona enter para continuar");
 
-if(strcmp(n,"yes")==0 || strcmp(n , "YES")==0){
+if(strcmp(n,"yes")==0 || strcmp(n , "YES")==0 || strcmp(n,"y")==0){
 exit(0); 
 }else {
 
