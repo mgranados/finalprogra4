@@ -23,6 +23,7 @@ char buffer[512];
 char buffer1[512]; //Buffer para almacenar mensajes del cliente
 char *dir;
 char * cwd;
+int contador=0;
 
 
 
@@ -39,7 +40,7 @@ int main (int argc, char *argv[])
 	struct sockaddr_in serv_addr, cli_addr;
 	
 	// Variables para tokenizar
-	char *cmd, *atb1, *atb2, *cadena;
+	char *cmd, *atb1, *atb2, *cadena, *user;
 	
 	int pid;
 	cwd=getcwd(buffer,-1);
@@ -54,16 +55,16 @@ int main (int argc, char *argv[])
  	 bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr));
   	 
   	 listen(sockfd,5);
-  	 
+
   	 while(1) //LOOP para que el servidor siempre este recibiendo mensajes
   	 {
-	  		  	
+	  	contador=0;
+	  	
   	 //Se recibe el mensaje
 	clilen = sizeof(cli_addr);
 	newsockfd = accept(sockfd,(struct sockaddr *) &cli_addr, &clilen);
 		
 		int fd[2];
-		
 		
 		//Threads para sincronizar los procesos
 		pthread_mutex_t mutexC;
@@ -76,11 +77,13 @@ int main (int argc, char *argv[])
 		pthread_cond_init (&lugarC,NULL);
 	
 		pipe(fd);
-		
+
 		pid=fork();
 	//-------------FORK -------------------
+		
 	if(pid==0){
-	//printf("\n%d accept", newsockfd);
+		
+	//printf("\n%d accept", newsockfd);s
 		printf(" \n ID %d", pid);
 		printf("\n Conexion de %d", inet_ntoa(cli_addr.sin_addr));
 
@@ -199,7 +202,6 @@ int main (int argc, char *argv[])
 		n = write(newsockfd,cadena,502);
 		pthread_mutex_unlock(&mutexC);
 		close(newsockfd);
-		exit(1);
 	}
 	else if(!cmd || strlen(cmd)==0 || cmd==NULL || cmd=="" || cmd=='\0')
 	{
@@ -219,6 +221,7 @@ int main (int argc, char *argv[])
 	close(fd[1]);
 
 	printf("\n \n");
+		exit(1);
 
 	}
 	else{ 

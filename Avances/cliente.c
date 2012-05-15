@@ -17,25 +17,7 @@ void error(const char *msg)
 
 int main(int argc, char *argv[])
 {
- //datos de sesión
-    char *users[5];
-    char *passwords[5];
-    int logout=0;
-    users[0]="sandy";
-    users[1]="abraham";
-    users[2]="martin";
-    users[3]="admin";
-    users[4]="asdaf";
-    
-    passwords[0]="1";
-    passwords[1]="2";
-    passwords[2]="3";
-    passwords[3]="admin";
-    passwords[4]="asdf";
-    
-    char usuario[10];
-    char pass[10];		
-    		//Reciben el usuario y contraseña
+ 
     int sockfd, portno, n;
     struct sockaddr_in serv_addr;
     struct hostent *server;
@@ -44,9 +26,13 @@ int main(int argc, char *argv[])
     char *arg2= argv[2];
     
     
-    char buffer[256]="hola";
+    char buffer[256];
+    char usuario[256];
+    char pass[256];
+    char pase[256];
+    char user[256]="œ";
   
-   
+    int contador=0;
    
    if (conec < 3) {
       fprintf(stderr,"usage %s hostname port\n", argv[0]);
@@ -54,17 +40,8 @@ int main(int argc, char *argv[])
    }
    
 
-
-
-
-
-
     while(1){
-        int sesioniniciada=0;
-        /*Ciclo encargado de verificar los usuarios y contraseñas introducidos con los guardos por defecto*/
-       
-        
-        
+
         portno = atoi(arg2);
         sockfd = socket(AF_INET, SOCK_STREAM, 0);
         if (sockfd < 0) 
@@ -82,7 +59,7 @@ int main(int argc, char *argv[])
         serv_addr.sin_port = htons(portno);
         if (connect(sockfd,(struct sockaddr *) &serv_addr,sizeof(serv_addr)) < 0) 
         error("ERROR connecting");
-    printf("%s@server: ", usuario);
+    printf("%s@server: ", user);
   bzero(buffer,256);
 
   fgets(buffer,255,stdin);
