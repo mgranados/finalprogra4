@@ -83,9 +83,8 @@ int main (int argc, char *argv[])
 		
 	if(pid==0){
 		
-	//printf("\n%d accept", newsockfd);s
-		printf(" \n ID %d", pid);
-		printf("\n Conexion de %d", inet_ntoa(cli_addr.sin_addr));
+	printf("\n%d accept", newsockfd);
+	printf("\n Conexion de %d", inet_ntoa(cli_addr.sin_addr));
 
 	bzero(buffer,512);// Se limpia el buffer
 	 n = recv(newsockfd,buffer,512,0); //Recibe el mensaje del cliente
