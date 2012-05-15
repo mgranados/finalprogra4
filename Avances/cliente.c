@@ -7,7 +7,27 @@
 #include <netinet/in.h>
 #include <netdb.h> 
 
+void termina(int x); 
 
+char n[10]; 
+int s; 
+void acabar(int x){
+
+printf("\n Está seguro que desea terminarlo? "); 
+scanf("%[^\n]s",n); 
+// printf("Presiona enter para continuar");
+
+if(strcmp(n,"yes")==0 || strcmp(n , "YES")==0){
+exit(0); 
+}else {
+
+signal (SIGINT, SIG_DFL);
+}
+
+// signal (SIGINT, SIG_DFL);
+
+
+}
 
 void error(const char *msg)
 {
@@ -41,6 +61,11 @@ int main(int argc, char *argv[])
    
 
     while(1){
+        
+        if (signal (SIGINT, acabar) == SIG_ERR)
+        {
+        perror ("No se puede cambiar signal");
+        }
 
         portno = atoi(arg2);
         sockfd = socket(AF_INET, SOCK_STREAM, 0);
