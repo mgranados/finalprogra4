@@ -91,7 +91,6 @@ char *mostrar(char *arg)
 	{
 		fgets(caracter,100,archivo);
 		strncpy(buffer,caracter,strlen(caracter));
-		printf("%s",buffer);
 		
 	}
 
